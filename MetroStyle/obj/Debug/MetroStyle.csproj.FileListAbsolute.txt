@@ -1,0 +1,15 @@
+D:\nauka\dotnet\first\MetroStyle\MetroStyle\bin\Debug\MetroStyle.exe.config
+D:\nauka\dotnet\first\MetroStyle\MetroStyle\bin\Debug\MetroStyle.exe
+D:\nauka\dotnet\first\MetroStyle\MetroStyle\bin\Debug\MetroStyle.pdb
+D:\nauka\dotnet\first\MetroStyle\MetroStyle\bin\Debug\MetroFramework.Design.dll
+D:\nauka\dotnet\first\MetroStyle\MetroStyle\bin\Debug\MetroFramework.dll
+D:\nauka\dotnet\first\MetroStyle\MetroStyle\bin\Debug\MetroFramework.Fonts.dll
+D:\nauka\dotnet\first\MetroStyle\MetroStyle\obj\Debug\MetroStyle.csprojResolveAssemblyReference.cache
+D:\nauka\dotnet\first\MetroStyle\MetroStyle\obj\Debug\MetroStyle.Properties.Resources.resources
+D:\nauka\dotnet\first\MetroStyle\MetroStyle\obj\Debug\MetroStyle.csproj.GenerateResource.Cache
+D:\nauka\dotnet\first\MetroStyle\MetroStyle\obj\Debug\MetroStyle.exe
+D:\nauka\dotnet\first\MetroStyle\MetroStyle\obj\Debug\MetroStyle.pdb
+D:\nauka\dotnet\first\MetroStyle\MetroStyle\obj\Debug\MetroStyle.Form1.resources
+D:\nauka\dotnet\first\MetroStyle\MetroStyle\bin\Debug\Excel.dll
+D:\nauka\dotnet\first\MetroStyle\MetroStyle\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\nauka\dotnet\first\MetroStyle\MetroStyle\bin\Debug\Excel.pdb
