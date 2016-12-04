@@ -18,7 +18,35 @@ namespace MetroStyle
         public Form1()
         {
             InitializeComponent();
-            this.StyleManager = metroStyleManager1;
+            this.StyleManager = metroStyleManager1;         
+        }
+
+        /// <summary>
+        /// Method that writes messages into log file
+        /// </summary>
+        /// <param name="logMessage">message</param>
+        /// <param name="w">file</param>
+        public static void Log(string logMessage, TextWriter w)
+        {
+            w.Write("\r\nLog Entry : ");
+            w.WriteLine("{0} {1}", DateTime.Now.ToLongTimeString(),
+                DateTime.Now.ToLongDateString());
+            w.WriteLine("  :");
+            w.WriteLine("  :{0}", logMessage);
+            w.WriteLine("-------------------------------");
+        }
+
+        /// <summary>
+        /// Method dumps written messages from log to console
+        /// </summary>
+        /// <param name="r">file</param>
+        public static void DumpLog(StreamReader r)
+        {
+            string line;
+            while ((line = r.ReadLine()) != null)
+            {
+                Console.WriteLine(line);
+            }
         }
 
         private void metroTile3_Click(object sender, EventArgs e)
@@ -42,22 +70,29 @@ namespace MetroStyle
             {
                 case 0:
                     metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;
+                    Properties.Settings.Default.theme = 0;
                     break;
                 case 1:
                     metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Light;
+                    Properties.Settings.Default.theme = 1;
                     break;
             }
+
+            Properties.Settings.Default.Save();
         }
 
         private void mbColor_SelectedIndexChanged(object sender, EventArgs e)
         {
             metroStyleManager1.Style = (MetroFramework.MetroColorStyle)Convert.ToInt32(mbColor.SelectedIndex);
+
+            Properties.Settings.Default.style = Convert.ToInt32(mbColor.SelectedIndex);
+            Properties.Settings.Default.Save();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            mbColor.SelectedIndex = 0;
-            mbTheme.SelectedIndex = 0;
+            mbTheme.SelectedIndex = Properties.Settings.Default.theme;
+            mbColor.SelectedIndex = Properties.Settings.Default.style;
         }
 
         DataSet result;
@@ -87,6 +122,20 @@ namespace MetroStyle
         private void cboSheet_SelectedIndexChanged(object sender, EventArgs e)
         {
             dataGridView.DataSource = result.Tables[cboSheet.SelectedIndex];
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            using (StreamWriter w = File.AppendText("log.txt"))
+            {
+                Log("Test1", w);
+                Log("Test2", w);
+            }
+
+            using (StreamReader r = File.OpenText("log.txt"))
+            {
+                DumpLog(r);
+            }
         }
     }
 }
